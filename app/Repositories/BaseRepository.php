@@ -98,18 +98,5 @@ class BaseRepository {
         return $model;
     }
 
-    /**
-     * Approve
-     *
-     * @param integer $id
-     * @return void
-     */
-    public function approve(int $id,$date) {
-        $model = $this->model->find($id);
-        $model->approved_at = Carbon::parse($date);
-        $model->approver = Auth::user()->id;
-        $model->save();
-        return $model;
-    }
 
 }
